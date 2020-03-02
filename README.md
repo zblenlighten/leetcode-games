@@ -7,6 +7,8 @@ Games in LeetCode
 - [Design Snake Game](#353-Design-Snake-Game)
 - [Candy Crush](#723-Candy-Crush)
 
+--------
+
 #### 348. Design Tic-Tac-Toe
 
 Design a Tic-tac-toe game that is played between two players on a n x n grid.
@@ -63,6 +65,8 @@ Difficulty: Medium
 
 Solution: [Python3](./snake_game.py)
 
+--------
+
 #### 353. Design Snake Game
 
 Design a Snake game that is played on a device with screen size = width x height. [Play the game online](http://patorjk.com/games/snake/) if you are not familiar with the game.
@@ -118,6 +122,8 @@ Difficulty: Medium
 
 Solution: [Python3](./tic_tac_toe.py)
 
+--------
+
 #### 723. Candy Crush
 
 This question is about implementing a basic elimination algorithm for Candy Crush.
@@ -147,3 +153,5 @@ Explanation:
 Difficulty: Medium
 
 Solution: [Python3](./candy_crush.py)
+
+--------

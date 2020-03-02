@@ -21,7 +21,7 @@ class Solution:
                 if board[r][c] > 0:
                     board[wr][c] = board[r][c]
                     wr -= 1
-            for wr in range(wr + 1)[::-1]:
+            for wr in range(wr + 1):
                 board[wr][c] = 0
                 
         return self.candyCrush(board) if todo else board
