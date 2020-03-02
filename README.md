@@ -1,1 +1,149 @@
-# leetcode-games
+Games in LeetCode
+========
+
+### LeetCode Game Lists
+
+- [Design Tic-Tac-Toe](#348-Design-Tic-Tac-Toe)
+- [Design Snake Game](#353-Design-Snake-Game)
+- [Candy Crush](#723-Candy-Crush)
+
+#### 348. Design Tic-Tac-Toe
+
+Design a Tic-tac-toe game that is played between two players on a n x n grid.
+
+You may assume the following rules:
+
+1. A move is guaranteed to be valid and is placed on an empty block.
+2. Once a winning condition is reached, no more moves is allowed.
+3. A player who succeeds in placing n of their marks in a horizontal, vertical, or diagonal row wins the game.
+
+Example:
+```
+Given n = 3, assume that player 1 is "X" and player 2 is "O" in the board.
+
+TicTacToe toe = new TicTacToe(3);
+
+toe.move(0, 0, 1); -> Returns 0 (no one wins)
+|X| | |
+| | | |    // Player 1 makes a move at (0, 0).
+| | | |
+
+toe.move(0, 2, 2); -> Returns 0 (no one wins)
+|X| |O|
+| | | |    // Player 2 makes a move at (0, 2).
+| | | |
+
+toe.move(2, 2, 1); -> Returns 0 (no one wins)
+|X| |O|
+| | | |    // Player 1 makes a move at (2, 2).
+| | |X|
+
+toe.move(1, 1, 2); -> Returns 0 (no one wins)
+|X| |O|
+| |O| |    // Player 2 makes a move at (1, 1).
+| | |X|
+
+toe.move(2, 0, 1); -> Returns 0 (no one wins)
+|X| |O|
+| |O| |    // Player 1 makes a move at (2, 0).
+|X| |X|
+
+toe.move(1, 0, 2); -> Returns 0 (no one wins)
+|X| |O|
+|O|O| |    // Player 2 makes a move at (1, 0).
+|X| |X|
+
+toe.move(2, 1, 1); -> Returns 1 (player 1 wins)
+|X| |O|
+|O|O| |    // Player 1 makes a move at (2, 1).
+|X|X|X|
+```
+
+Difficulty: Medium
+
+Solution: [Python3](./snake_game.py)
+
+#### 353. Design Snake Game
+
+Design a Snake game that is played on a device with screen size = width x height. [Play the game online](http://patorjk.com/games/snake/) if you are not familiar with the game.
+
+The snake is initially positioned at the top left corner (0,0) with length = 1 unit.
+
+You are given a list of food's positions in row-column order. When a snake eats the food, its length and the game's score both increase by 1.
+
+Each food appears one by one on the screen. For example, the second food will not appear until the first food was eaten by the snake.
+
+When a food does appear on the screen, it is guaranteed that it will not appear on a block occupied by the snake.
+
+Example:
+```
+Given width = 3, height = 2, and food = [[1,2],[0,1]].
+
+Snake snake = new Snake(width, height, food);
+
+Initially the snake appears at position (0,0) and the food at (1,2).
+
+|S| | |
+| | |F|
+
+snake.move("R"); -> Returns 0
+
+| |S| |
+| | |F|
+
+snake.move("D"); -> Returns 0
+
+| | | |
+| |S|F|
+
+snake.move("R"); -> Returns 1 (Snake eats the first food and right after that, the second food appears at (0,1) )
+
+| |F| |
+| |S|S|
+
+snake.move("U"); -> Returns 1
+
+| |F|S|
+| | |S|
+
+snake.move("L"); -> Returns 2 (Snake eats the second food)
+
+| |S|S|
+| | |S|
+
+snake.move("U"); -> Returns -1 (Game over because snake collides with border)
+```
+
+Difficulty: Medium
+
+Solution: [Python3](./tic_tac_toe.py)
+
+#### 723. Candy Crush
+
+This question is about implementing a basic elimination algorithm for Candy Crush.
+
+Given a 2D integer array board representing the grid of candy, different positive integers board[i][j] represent different types of candies. A value of board[i][j] = 0 represents that the cell at position (i, j) is empty. The given board represents the state of the game following the player's move. Now, you need to restore the board to a stable state by crushing candies according to the following rules:
+
+1. If three or more candies of the same type are adjacent vertically or horizontally, "crush" them all at the same time - these positions become empty.
+2. After crushing all candies simultaneously, if an empty space on the board has candies on top of itself, then these candies will drop until they hit a candy or bottom at the same time. (No new candies will drop outside the top boundary.)
+3. After the above steps, there may exist more candies that can be crushed. If so, you need to repeat the above steps.
+4. If there does not exist more candies that can be crushed (ie. the board is stable), then return the current board.
+
+You need to perform the above rules until the board becomes stable, then return the current board.
+
+Example:
+
+Input:
+board =
+[[110,5,112,113,114],[210,211,5,213,214],[310,311,3,313,314],[410,411,412,5,414],[5,1,512,3,3],[610,4,1,613,614],[710,1,2,713,714],[810,1,2,1,1],[1,1,2,2,2],[4,1,4,4,1014]]
+
+Output:
+[[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[110,0,0,0,114],[210,0,0,0,214],[310,0,0,113,314],[410,0,0,213,414],[610,211,112,313,614],[710,311,412,613,714],[810,411,512,713,1014]]
+
+Explanation:
+
+<img src="https://assets.leetcode.com/uploads/2018/10/12/candy_crush_example_2.png" alt="drawing" height="350"/>
+
+Difficulty: Medium
+
+Solution: [Python3](./candy_crush.py)
