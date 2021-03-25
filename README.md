@@ -113,7 +113,7 @@ Could you do better than O(n^2) per move() operation?
 
 Difficulty: Medium
 
-Solution: [Python3](./snake_game.py)
+Solution: [Python3](./tic_tac_toe.py)
 
 --------
 
@@ -170,7 +170,7 @@ snake.move("U"); -> Returns -1 (Game over because snake collides with border)
 
 Difficulty: Medium
 
-Solution: [Python3](./tic_tac_toe.py)
+Solution: [Python3](./snake_game.py)
 
 --------
 
